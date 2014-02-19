@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "vendor/modernizr" %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+
+<div class='header'>
+  <nav class="top-bar" data-topbar>
+    <ul class="title-area">
+    	<li class="name">
+      	<h1><a href="#"><img src=http://alienrescue.edb.utexas.edu/template/img/AR_logo.png></img></a></h1>
+    	</li>
+ 	</ul>
+  
+  <section class="top-bar-section">
+    <!-- Right Nav Section -->
+    <ul class="right">
+      <li class="has-dropdown">
+        <a href="#">Quick Start</a>
+        <ul class="dropdown">
+          <li><a href="#">Tool Description</a></li>
+          <li><a href="#">Solutions</a></li>
+          <li><a href="#">Code for Budget</a></li>
+          <li><a href="#">Documents to Print</a></li>
+        </ul>
+      </li>
+      <li class="has-dropdown">
+        <a href="#">How to teach</a>
+        <ul class="dropdown">
+          <li><a href="#">Lesson Plans</a></li>
+          <li><a href="#">Teaching Strategies</a></li>
+          <li><a href="#">Program Goals and Contents</a></li>
+        </ul>
+      </li>
+    </ul>
+
+  </section>
+</nav>    
+</div>
+
+<!-- Side Nav -->
+<div class="row">
+    <div class="small-3 columns">
+        <div class="hide-for-small">
+            <div class="sidebar">
+				<ul class="side-nav">
+ 					<li>QUICK START</li>
+ 					<li><a href="#">Tool Description</a></li>
+			    	<li><a href="#">Solutions</a></li>
+  					<li><a href="#">Code for Budget</a></li>
+  					<li><a href="#">Documents to Print</a></li>
+				</ul>
+				
+				<ul class="side-nav">
+ 					<li>HOW TO TEACH</li>
+ 					<li><a href="#">Lesson Plans</a></li>
+			    	<li><a href="#">Teaching Strategies</a></li>
+  					<li><a href="#" data-dropdown="hover1" data-options="is_hover:true">Program Goals and Contents</a>
+						<ul id="hover1" class="f-dropdown" data-dropdown-content>
+  						<li><a href="#">Contents</a></li>
+				  	    <li><a href="#">Goals</a></li>
+  						<li><a href="#">Standards</a></li>
+  					</li>
+  					
+				</ul>
+			</div>
+		</div>
+	</div>
+
+
+<div class="small-9 columns"><div class="paragraph">
+	<%= yield %>
+</div></div>
+</div>
+    <%= javascript_include_tag "application" %>
+  </body>
+</html>
