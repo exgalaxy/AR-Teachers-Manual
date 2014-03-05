@@ -7,12 +7,36 @@
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
     <%= stylesheet_link_tag    "application" %>
+    
     <%= javascript_include_tag "vendor/modernizr" %>
     <%= csrf_meta_tags %>
   </head>
 
   <body>
+<script>
+$(document).ready(function(){
+  $('.masthead').bgscroll({scrollSpeed:75, direction:'h' });
+  $('.fancybox-media')
+    .attr('rel', 'media-gallery')
+    .fancybox({
+      openEffect : 'none',
+      closeEffect : 'none',
+      prevEffect : 'none',
+      nextEffect : 'none',
+  
+      arrows : false,
+      helpers : {
+        media : {},
+        buttons : {}
+      }
+    });
 
+  $('.carousel').carousel({
+      <!-- CHANGE INTERVAL TIME OF Carousel-->
+      interval: 3000
+    });    
+});
+</script>
 <div class='header'>
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
@@ -35,7 +59,6 @@
   		<a href="mailto:mliu@austin.utexas.edu" class="small button">Contact Us</a>
 		</li>-->
     </ul> 
-
   </section>
 </nav>    
 </div>
@@ -58,6 +81,7 @@
  					<li><a href="/lesson-plans">Lesson Plans</a></li>
 			    	<li><a href="/strategies">Teaching Strategies</a></li>
 			    	<li><a href="/program-goals">Program Goals and Contents</a></li>
+			    	
   					
 				</ul>
 			</div>
@@ -68,6 +92,29 @@
 <div class="small-9 columns"><div class="paragraph">
 	<%= yield %>
 </div></div>
+
+<!-- <div class="zurb-footer-bottom">
+  <div class="row">
+    <div class="medium-4 medium-4 push-8 columns">
+      <ul class="home-social">
+          <li><a href="http://www.twitter.com/ZURB" class="twitter"></a></li>
+          <li><a href="http://www.facebook.com/ZURB" class="facebook"></a></li>
+          <li><a href="http://zurb.com/contact" class="mail"></a></li>
+        </ul>
+     </div>
+     <div class="medium-8 medium-8 pull-4 columns">
+        <a href="http://www.zurb.com" class="zurb-logo regular"></a>
+        <ul class="zurb-links">
+          <li><a href="http://zurb.com/about">About</a></li>
+          <li><a href="http://zurb.com/blog">Blog</a></li>
+          <li><a href="http://zurb.com/news">News<span class="show-for-medium-up"> &amp; Events</span></a></li>
+          <li><a href="http://zurb.com/contact">Contact</a></li>
+          <li><a href="http://zurb.com/sitemap">Sitemap</a></li>
+       </ul>
+       <p class="copyright">&copy; 1998&dash;2014 ZURB, Inc. All rights reserved.</p>
+    </div>          
+  </div>
+</div> -->
 </div>
     <%= javascript_include_tag "application" %>
   </body>
